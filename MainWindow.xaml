@@ -1,15 +1,15 @@
-﻿<Window x:Class="_184905NameSorter.MainWindow"
+﻿<Window x:Class="_184905ThreeFiveMultiplesSum.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_184905NameSorter"
+        xmlns:local="clr-namespace:_184905ThreeFiveMultiplesSum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
     <StackPanel>
-        <Button x:Name="btnread" Content="Click to sort names" Click="btnread_Click"/>
-        <TextBox x:Name="InputName"/>
-        <TextBlock x:Name="NameOutput" TextWrapping="Wrap"/>
-        <Label x:Name="LabelValue"/>
+        <Button x:Name="BTNcalculate" Content="Click to See all the multiples of 3 and 5, and the sum of them" Click="BTNcalculate_Click"/>
+         
+        <TextBlock x:Name="MultiplesOutput" TextWrapping="Wrap" />
+        <Label x:Name="SumOutput" />
     </StackPanel>
 </Window>

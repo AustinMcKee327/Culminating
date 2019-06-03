@@ -13,64 +13,39 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _184905NameSorter
+namespace _184905ThreeFiveMultiplesSum
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        UInt64 NameSum;
-        UInt64 wordposition;
-        UInt64 wordValue;
+        int FinalSum;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnread_Click(object sender, RoutedEventArgs e)
+        private void BTNcalculate_Click(object sender, RoutedEventArgs e)
         {
-            string output = "";
-            System.IO.StreamReader sr = new System.IO.StreamReader("Names.txt");
-        
-            output = sr.ReadToEnd();
-            output = output.ToUpper();
-            string[] s = output.Split(',');
-            
-
-//            string lastWord = "";
-            
-            Array.Sort(s);
-            //MessageBox.Show(s.Length.ToString());
-            foreach (string word in s)
+            for(int i = 1; i<334; i++)
             {
+                MultiplesOutput.Text += i * 3 + ", ";
+                FinalSum += i * 3;
                 
-                //lastWord = word;
-                wordposition++;
-                wordValue = 0;
-                UInt64 placeholder = 0;
-                //MessageBox.Show(word);
-                for(UInt64 i=(UInt64)0; i<(UInt64)word.Length; i++)
-                {
-                    char Letter = word[(int)i];
-                    //MessageBox.Show(word[i].ToString());
-                    placeholder = Letter-(UInt64)64;
-                    //MessageBox.Show(placeholder.ToString());
-                    wordValue += placeholder;
-                    //MessageBox.Show(NameSum.ToString());
-                    
-                }
-                NameSum += wordValue * wordposition;
-
-                //NameOutput.Text += word + " ";
-
-
-
-
-
-
             }
-            LabelValue.Content = NameSum.ToString() + Environment.NewLine + lastWord;
+            MultiplesOutput.Text += Environment.NewLine;
+            for(int j = 1; j<200; j++)
+            {
+                MultiplesOutput.Text += j * 5 + ", ";
+                
+                FinalSum += j * 5;
+            }
+            for (int k = 1; k < 67; k++)
+            {
+                FinalSum -= k * 15;
+            }
+            SumOutput.Content = FinalSum;
         }
     }
 }
